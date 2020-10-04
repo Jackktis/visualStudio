@@ -533,19 +533,6 @@ public class implParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
-	public static class UnequalContext extends ConditionContext {
-		public ExprContext e1;
-		public Token op;
-		public ExprContext e2;
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public TerminalNode COMPARE() { return getToken(implParser.COMPARE, 0); }
-		public UnequalContext(ConditionContext ctx) { copyFrom(ctx); }
-	}
 	public static class OrContext extends ConditionContext {
 		public ConditionContext con1;
 		public Token op;
@@ -572,6 +559,19 @@ public class implParser extends Parser {
 		public TerminalNode AND() { return getToken(implParser.AND, 0); }
 		public AndContext(ConditionContext ctx) { copyFrom(ctx); }
 	}
+	public static class CompareExpressionsContext extends ConditionContext {
+		public ExprContext e1;
+		public Token op;
+		public ExprContext e2;
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TerminalNode COMPARE() { return getToken(implParser.COMPARE, 0); }
+		public CompareExpressionsContext(ConditionContext ctx) { copyFrom(ctx); }
+	}
 
 	public final ConditionContext condition() throws RecognitionException {
 		return condition(0);
@@ -589,16 +589,16 @@ public class implParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			_localctx = new UnequalContext(_localctx);
+			_localctx = new CompareExpressionsContext(_localctx);
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
 			setState(69);
-			((UnequalContext)_localctx).e1 = expr(0);
+			((CompareExpressionsContext)_localctx).e1 = expr(0);
 			setState(70);
-			((UnequalContext)_localctx).op = match(COMPARE);
+			((CompareExpressionsContext)_localctx).op = match(COMPARE);
 			setState(71);
-			((UnequalContext)_localctx).e2 = expr(0);
+			((CompareExpressionsContext)_localctx).e2 = expr(0);
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(81);
