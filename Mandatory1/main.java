@@ -95,12 +95,11 @@ class Interpreter extends AbstractParseTreeVisitor<double> implements implVisito
     };
     
     public Double visitAddition(implParser.AdditionContext ctx){
-		if(ctx.op.getText().equals("+")){
-				return visit(ctx.e1) + visit(ctx.e2);
-			} else {
-				return visit(ctx.e1) - visit(ctx.e2);
-			} 
-		}
+		if(ctx.op.getText().equals("+")) {
+			return visit(ctx.e1) + visit(ctx.e2);
+		} else {
+			return visit(ctx.e1) - visit(ctx.e2);
+		} 
     };
 
     public Double visitMultiplication(implParser.MultiplicationContext ctx){
