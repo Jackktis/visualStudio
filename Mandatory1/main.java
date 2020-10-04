@@ -133,8 +133,8 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 	}
 
 	public Boolean visitCompareExpressions(implParser.CompareExpressionsContext ctx){
-		Double v1=visit(ctx.e1);
-		Double v2=visit(ctx.e2);
+		double v1=visit(ctx.e1);
+		double v2=visit(ctx.e2);
 		if(ctx.op.getText().equals("!=")){
 			if(!(v1.equals(v2))){
 				return true;
@@ -179,7 +179,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 		boolean c1=visit(ctx.con1);
 		boolean c2=visit(ctx.con2);
 		if(ctx.op.getText().equals("&&")){
-			if (c1 == true && c2 == true){
+			if ((boolean)c1 == true && (boolean)c2 == true){
 				return true;
 			}else{
 				return false;
@@ -189,7 +189,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 			}else{
 				return false;
 			}
-
+		}
 	};
 
 	public Boolean visitOr(implParser.OrContext ctx){
@@ -201,6 +201,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 			} else{
 				return true;
 			}
+		}
 	};
 
 

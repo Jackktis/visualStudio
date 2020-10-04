@@ -149,39 +149,99 @@ public interface implListener extends ParseTreeListener {
 	 */
 	void exitMinus(implParser.MinusContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Unequal}
+	 * Enter a parse tree produced by {@link implParser#stat}.
+	 * @param ctx the parse tree
+	 */
+	void enterStat(implParser.StatContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link implParser#stat}.
+	 * @param ctx the parse tree
+	 */
+	void exitStat(implParser.StatContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link implParser#if_stat}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf_stat(implParser.If_statContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link implParser#if_stat}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf_stat(implParser.If_statContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link implParser#while_stat}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile_stat(implParser.While_statContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link implParser#while_stat}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile_stat(implParser.While_statContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link implParser#condition_block}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondition_block(implParser.Condition_blockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link implParser#condition_block}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondition_block(implParser.Condition_blockContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link implParser#stat_block}.
+	 * @param ctx the parse tree
+	 */
+	void enterStat_block(implParser.Stat_blockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link implParser#stat_block}.
+	 * @param ctx the parse tree
+	 */
+	void exitStat_block(implParser.Stat_blockContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link implParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlock(implParser.BlockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link implParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlock(implParser.BlockContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Or}
 	 * labeled alternative in {@link implParser#condition}.
 	 * @param ctx the parse tree
 	 */
-	void enterUnequal(implParser.UnequalContext ctx);
+	void enterOr(implParser.OrContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Unequal}
+	 * Exit a parse tree produced by the {@code Or}
 	 * labeled alternative in {@link implParser#condition}.
 	 * @param ctx the parse tree
 	 */
-	void exitUnequal(implParser.UnequalContext ctx);
+	void exitOr(implParser.OrContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code equal}
-	 * labeled alternative in {@link implParser#condition}.
-	 * @param ctx the parse tree
-	 */
-	void enterEqual(implParser.EqualContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code equal}
-	 * labeled alternative in {@link implParser#condition}.
-	 * @param ctx the parse tree
-	 */
-	void exitEqual(implParser.EqualContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code and}
+	 * Enter a parse tree produced by the {@code And}
 	 * labeled alternative in {@link implParser#condition}.
 	 * @param ctx the parse tree
 	 */
 	void enterAnd(implParser.AndContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code and}
+	 * Exit a parse tree produced by the {@code And}
 	 * labeled alternative in {@link implParser#condition}.
 	 * @param ctx the parse tree
 	 */
 	void exitAnd(implParser.AndContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code CompareExpressions}
+	 * labeled alternative in {@link implParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterCompareExpressions(implParser.CompareExpressionsContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code CompareExpressions}
+	 * labeled alternative in {@link implParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitCompareExpressions(implParser.CompareExpressionsContext ctx);
 }
