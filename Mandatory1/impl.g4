@@ -27,7 +27,7 @@ ADDSUB : ('+' | '-');
 CONST : [0-9]+ ('.' [0-9]+)? ;             
 
 
-condition : e1=expr op=COMPARE e2=expr           	# Unequal
+condition : e1=expr op=COMPARE e2=expr           	# CompareExpressions
 	  | con1=condition op=AND con2=condition 		# And
 	  | con1=condition op=OR con2=condition 		# Or
 	  ;  
@@ -35,7 +35,6 @@ condition : e1=expr op=COMPARE e2=expr           	# Unequal
 COMPARE : ('!=' | '==' | '>' | '<' | '>=' | '<=');
 AND : ('&&');
 OR : ('||');
-
 ID    : ALPHA (ALPHA|NUM)* ;	
 FLOAT : '-'? NUM+ ('.' NUM+)? ;
 
