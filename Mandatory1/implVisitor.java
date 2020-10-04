@@ -93,24 +93,60 @@ public interface implVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMinus(implParser.MinusContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Unequal}
+	 * Visit a parse tree produced by {@link implParser#stat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStat(implParser.StatContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link implParser#if_stat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIf_stat(implParser.If_statContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link implParser#while_stat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile_stat(implParser.While_statContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link implParser#condition_block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondition_block(implParser.Condition_blockContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link implParser#stat_block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStat_block(implParser.Stat_blockContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link implParser#block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlock(implParser.BlockContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Or}
 	 * labeled alternative in {@link implParser#condition}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitUnequal(implParser.UnequalContext ctx);
+	T visitOr(implParser.OrContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code equal}
-	 * labeled alternative in {@link implParser#condition}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEqual(implParser.EqualContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code and}
+	 * Visit a parse tree produced by the {@code And}
 	 * labeled alternative in {@link implParser#condition}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitAnd(implParser.AndContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code CompareExpressions}
+	 * labeled alternative in {@link implParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCompareExpressions(implParser.CompareExpressionsContext ctx);
 }
