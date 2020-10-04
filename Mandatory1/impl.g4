@@ -21,6 +21,36 @@ expr : c=CONST                             # Constant
      | '(' e=expr ')'                      # Parenthesis 
      ;
 
+stat : if_stat 
+     | while_stat
+	 ;
+
+if_stat : IF condition_block (ELSE IF condition_block)* (ELSE stat_block)?;
+
+while_stat : WHILE expr stat_block;
+
+condition_block
+ : expr stat_block
+ ;
+
+stat_block
+ : OBRACE block CBRACE
+ | stat
+ ;
+
+block
+ : stat*
+ ;
+ 
+NOT : '!';
+OPAR : '(';
+CPAR : ')';
+OBRACE : '{';
+CBRACE : '}';
+IF : 'if';
+ELSE : 'else';
+WHILE : 'while';
+
 MULDEV : ('*' | '/');
 ADDSUB : ('+' | '-');
 
