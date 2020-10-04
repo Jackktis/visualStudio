@@ -1,4 +1,4 @@
-// Generated from /home/gonhk/CompilerTeknik/new_Mandatory1/CompilerAfl/impl/impl.g4 by ANTLR 4.8
+// Generated from /home/gonhk/CompilerTeknik/new_Mandatory1/CompilerAfl/Mandatory1/impl.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -18,7 +18,7 @@ public class implParser extends Parser {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, MULDEV=16, 
-		STRIG=17, CONST=18, COMPARE=19, ID=20, FLOAT=21, ALPHA=22, NUM=23, WHITESPACE=24, 
+		ADDSUB=17, CONST=18, COMPARE=19, ID=20, FLOAT=21, ALPHA=22, NUM=23, WHITESPACE=24, 
 		COMMENT=25, COMMENT2=26;
 	public static final int
 		RULE_start = 0, RULE_program = 1, RULE_command = 2, RULE_expr = 3, RULE_condition = 4;
@@ -39,7 +39,7 @@ public class implParser extends Parser {
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, "MULDEV", "STRIG", "CONST", "COMPARE", "ID", 
+			null, null, null, null, "MULDEV", "ADDSUB", "CONST", "COMPARE", "ID", 
 			"FLOAT", "ALPHA", "NUM", "WHITESPACE", "COMMENT", "COMMENT2"
 		};
 	}
@@ -379,7 +379,7 @@ public class implParser extends Parser {
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode STRIG() { return getToken(implParser.STRIG, 0); }
+		public TerminalNode ADDSUB() { return getToken(implParser.ADDSUB, 0); }
 		public AdditionContext(ExprContext ctx) { copyFrom(ctx); }
 	}
 	public static class VariableContext extends ExprContext {
@@ -395,7 +395,7 @@ public class implParser extends Parser {
 	public static class MinusContext extends ExprContext {
 		public Token op;
 		public ExprContext e;
-		public TerminalNode STRIG() { return getToken(implParser.STRIG, 0); }
+		public TerminalNode ADDSUB() { return getToken(implParser.ADDSUB, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
@@ -430,13 +430,13 @@ public class implParser extends Parser {
 				((ConstantContext)_localctx).c = match(CONST);
 				}
 				break;
-			case STRIG:
+			case ADDSUB:
 				{
 				_localctx = new MinusContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(48);
-				((MinusContext)_localctx).op = match(STRIG);
+				((MinusContext)_localctx).op = match(ADDSUB);
 				setState(49);
 				((MinusContext)_localctx).e = expr(3);
 				}
@@ -499,7 +499,7 @@ public class implParser extends Parser {
 						setState(60);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
 						setState(61);
-						((AdditionContext)_localctx).op = match(STRIG);
+						((AdditionContext)_localctx).op = match(ADDSUB);
 						setState(62);
 						((AdditionContext)_localctx).e2 = expr(5);
 						}

@@ -15,14 +15,14 @@ command : x=ID '=' e=expr ';'	           # Assignment
 	
 expr : c=CONST                             # Constant 
      | e1=expr op=MULDEV e2=expr           # Multiplication
-     | e1=expr op=STRIG e2=expr            # Addition
-     | op=STRIG e=expr                     # Minus
+     | e1=expr op=ADDSUB e2=expr           # Addition
+     | op=ADDSUB e=expr                    # Minus
 	 | x=ID		                           # Variable
      | '(' e=expr ')'                      # Parenthesis 
      ;
 
 MULDEV : ('*' | '/');
-STRIG : ('+' | '-');
+ADDSUB : ('+' | '-');
 
 CONST : [0-9]+ ('.' [0-9]+)? ;             
 
