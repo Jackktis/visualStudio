@@ -27,16 +27,19 @@ ADDSUB : ('+' | '-');
 CONST : [0-9]+ ('.' [0-9]+)? ;             
 
 
-condition : e1=expr '!=' e2=expr           		# Unequal
-	  | e1=expr '==' e2=expr               		# equal
-	  | con1=condition '&&' con2=condition 		# and
-	  | e1=expr '>' e2=expr						# Greater_than
-	  | e1=expr '>=' e2=expr					# Greater_than_or_equals
-	  | e1=expr '<' e2=expr						# Lesser_than
-	  | e1=expr '<=' e2=expr					# Lesser_than_or_equals
+condition : e1=expr op=COMPARE e2=expr                      # Unequal
+	  | e1=expr '==' e2=expr               		            # equal
+	  | e1=expr '>' e2=expr					             	# Greater_than
+	  | e1=expr '>=' e2=expr					            # Greater_than_or_equals
+	  | e1=expr '<' e2=expr					            	# Lesser_than
+	  | e1=expr '<=' e2=expr					            # Lesser_than_or_equals
+	  | con1=condition op=CONDITIONER con2=condition 		# and
+	  | con1=condition op=CONDITIONER con2=condition 		# or
+	  | '(' con=condition ')'                               # ConditionParenthesis 
 	  ;  
 
 COMPARE : ('!=' | '==');
+CONDITIONER : ('&&' | '||');
 
 ID    : ALPHA (ALPHA|NUM)* ;	
 FLOAT : '-'? NUM+ ('.' NUM+)? ;
