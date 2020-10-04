@@ -47,7 +47,7 @@ public class main {
 // This is parameterized over a return type "<T>" which is in our case
 // simply a double.
 
-class Interpreter extends AbstractParseTreeVisitor<double> implements implVisitor<double> {
+class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisitor<Double> {
 
     static Environment env=new Environment();
     
