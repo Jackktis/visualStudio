@@ -1,4 +1,4 @@
-// Generated from /home/gonhk/CompilerTeknik/new_Mandatory1/CompilerAfl/Mandatory1/impl.g4 by ANTLR 4.8
+// Generated from /home/jackktis/Mandatory1/impl.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

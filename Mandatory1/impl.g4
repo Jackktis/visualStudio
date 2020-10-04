@@ -10,6 +10,8 @@ program : c=command                        # SingleCommand
 	
 command : x=ID '=' e=expr ';'	           # Assignment
 	| 'output' e=expr ';'                  # Output
+	| 'if' '(' c=condition ')' '{' '}'     # if
+	| 'else' '(' c=condition ')' '{' '}'   # else
     | 'while' '('c=condition')' p=program  # WhileLoop
 	;
 	
@@ -20,6 +22,13 @@ expr : c=CONST                             # Constant
 	 | x=ID		                           # Variable
      | '(' e=expr ')'                      # Parenthesis 
      ;
+
+condition : e1=expr op=COMPARE e2=expr              # CompareExpressions
+	  | con1=condition op=AND con2=condition 		# And
+	  | con1=condition op=OR con2=condition 		# Or
+	  ;  
+
+
 
 stat : if_stat 
      | while_stat
@@ -41,7 +50,7 @@ stat_block
 block
  : stat*
  ;
- 
+
 NOT : '!';
 OPAR : '(';
 CPAR : ')';
@@ -55,12 +64,6 @@ MULDEV : ('*' | '/');
 ADDSUB : ('+' | '-');
 
 CONST : [0-9]+ ('.' [0-9]+)? ;             
-
-
-condition : e1=expr op=COMPARE e2=expr           	# CompareExpressions
-	  | con1=condition op=AND con2=condition 		# And
-	  | con1=condition op=OR con2=condition 		# Or
-	  ;  
 
 COMPARE : ('!=' | '==' | '>' | '<' | '>=' | '<=');
 AND : ('&&');
