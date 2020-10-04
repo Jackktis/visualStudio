@@ -739,7 +739,8 @@ public class implParser extends Parser {
 		}
 	}
 	public static class AndContext extends ConditionContext {
-		public ConditionContext con;
+		public ConditionContext con1;
+		public ConditionContext con2;
 		public List<ConditionContext> condition() {
 			return getRuleContexts(ConditionContext.class);
 		}
@@ -819,14 +820,14 @@ public class implParser extends Parser {
 					{
 					{
 					_localctx = new AndContext(new ConditionContext(_parentctx, _parentState));
-					((AndContext)_localctx).con = _prevctx;
+					((AndContext)_localctx).con1 = _prevctx;
 					pushNewRecursionContext(_localctx, _startState, RULE_condition);
 					setState(79);
 					if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
 					setState(80);
 					match(T__10);
 					setState(81);
-					((AndContext)_localctx).con = condition(2);
+					((AndContext)_localctx).con2 = condition(2);
 					}
 					} 
 				}

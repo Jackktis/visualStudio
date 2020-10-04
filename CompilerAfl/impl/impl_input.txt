@@ -1,6 +1,6 @@
 /* Example program for the imperative language impl */
 
-
+/*
 n=5;
 result=1;
 while(n!=0){
@@ -9,10 +9,8 @@ while(n!=0){
 }
 
 output result;
+*/
 
-
-/*
 a = 4 - 2;
 output a;
 
-*/
