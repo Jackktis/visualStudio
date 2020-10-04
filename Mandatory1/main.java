@@ -1,4 +1,7 @@
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+
+import sun.font.TrueTypeFont;
+
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import org.antlr.v4.runtime.CharStreams;
@@ -128,5 +131,79 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 	public Double visitEqual(implParser.EqualContext ctx){
 		
 	}
+
+	public Boolean visitCompareExpressions(implParser.CompareExpressionsContext ctx){
+		Double v1=visit(ctx.e1);
+		Double v2=visit(ctx.e2);
+		if(ctx.op.getText().equals("!=")){
+			if(!(v1.equals(v2))){
+				return true;
+			}else{
+				return false;
+			}
+		} else if(ctx.op.getText().equals("==")){
+			if(v1.equals(v2)){
+				return true;
+			}else{
+				return false;
+			}
+		} else if(ctx.op.getText().equals(">")){
+			if(v1 > v2){
+				return true;
+			}else{
+				return false;
+			}
+		} else if(ctx.op.getText().equals("<")){
+			if(v1 < v2){
+				return true;
+			}else{
+				return false;
+			}
+		} else if(ctx.op.getText().equals(">=")){
+			if(v1 >= v2){
+				return true;
+			}else{
+				return false;
+			}
+		} else if(ctx.op.getText().equals("<=")){
+			if(v1 <= v2){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+	};
+
+	public Boolean visitAnd(implParser.AndContext ctx){
+		boolean c1=visit(ctx.con1);
+		boolean c2=visit(ctx.con2);
+		if(ctx.op.getText().equals("&&")){
+			if (c1 == true && c2 == true){
+				return true;
+			}else{
+				return false;
+			}
+			if (c1 == false && c2 == false){
+				return true;
+			}else{
+				return false;
+			}
+
+	};
+
+	public Boolean visitOr(implParser.OrContext ctx){
+		boolean c1=visit(ctx.con1);
+		boolean c2=visit(ctx.con2);
+		if(ctx.op.getText().equals("||")){
+			if (c1 == false && c2 == false){
+				return false;
+			} else{
+				return true;
+			}
+	};
+
+
+
 }
 
