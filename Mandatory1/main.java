@@ -189,6 +189,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 			}else{
 				return false;
 			}
+		}
 
 	};
 
@@ -201,6 +202,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 			} else{
 				return true;
 			}
+		}
 	};
 
 
