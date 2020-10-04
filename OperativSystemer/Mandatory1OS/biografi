@@ -1,9 +1,0 @@
-file:///C:/Users/ktis1/Downloads/SYSTEM%20CALLS%20(7).pdf                                         - figur 1-19.
-https://brennan.io/2015/01/16/write-a-shell-in-c/                                                 - oplæsning på hvor jeg har fået mest inspiration af. 
-https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm                            - brug af fgets
-https://www.geeksforgeeks.org/strtok-strtok_r-functions-c-examples/                               - Tokens (split inputet op i bider)
-https://man7.org/linux/man-pages/man2/chdir.2.html                                                - cd commando
-https://stackoverflow.com/questions/4180818/finding-the-length-of-a-character-array-in-c/4180826  - get size of a char array c
-https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm                           - malloc 
-https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-i-o-redirection         - An Introduction to Linux I/O Redirection
-https://www.geeksforgeeks.org/introduction-of-system-call/                                        - Introduction of System Call
