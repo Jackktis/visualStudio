@@ -110,7 +110,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
     };
 
     public Double visitConstant(implParser.ConstantContext ctx){
-		return double.parsedouble(ctx.c.getText()); 
+		return Double.parseDouble(ctx.c.getText()); 
 	};
 
 	public Double visitMinus(implParser.MinusContext ctx){
