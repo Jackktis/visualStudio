@@ -192,6 +192,8 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 		}
 	};
 
+	// TODO: 
+	/* for loop, array[i] samt få vore conditioner til at fungere. 
 
 
 }

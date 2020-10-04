@@ -4,32 +4,32 @@ grammar impl;
 
 start   :  cs+=command* EOF ;
 
-program : c=command                        # SingleCommand
-	| '{' cs+=command* '}'                 # MultipleCommands
+program : c=command                                          # SingleCommand
+	| '{' cs+=command* '}'                                   # MultipleCommands
 	;
 	
-command : x=ID '=' e=expr ';'	           # Assignment
-	| 'output' e=expr ';'                  # Output
-	| 'if' '(' c=condition ')' '{' '}'     # if
-	| 'else' '(' c=condition ')' '{' '}'   # else
-    | 'while' '('c=condition')' p=program  # WhileLoop
+command : x=ID '=' e=expr ';'	                             # Assignment
+	| 'output' e=expr ';'                                    # Output
+	| 'if' '(' c=condition ')' '{' '}'                       # if               // mellem tuborg parateserne skal der stå program
+	| 'else' '(' c=condition ')' '{' '}'                     # else             // mellem tuborg parateserne skal der stå program
+    | 'while' '('c=condition')' p=program                    # WhileLoop
 	;
 	
-expr : c=CONST                             # Constant 
-     | e1=expr op=MULDEV e2=expr           # Multiplication
-     | e1=expr op=ADDSUB e2=expr           # Addition
-     | op=ADDSUB e=expr                    # Minus
-	 | x=ID		                           # Variable
-     | '(' e=expr ')'                      # Parenthesis 
+expr : c=CONST                                               # Constant 
+     | e1=expr op=MULDEV e2=expr                             # Multiplication
+     | e1=expr op=ADDSUB e2=expr                             # Addition
+     | op=ADDSUB e=expr                                      # Minus
+	 | x=ID		                                             # Variable
+     | '(' e=expr ')'                                        # Parenthesis 
      ;
 
-condition : e1=expr op=COMPARE e2=expr              # CompareExpressions
-	  | con1=condition op=AND con2=condition 		# And
-	  | con1=condition op=OR con2=condition 		# Or
+condition :  e1=expr op=COMPARE e2=expr                      # CompareExpressions
+	  | con1=condition op=AND con2=condition 		         # And
+	  | con1=condition op=OR con2=condition 		         # Or
 	  ;  
 
 
-
+// -------------------------------------------- statements ------------------------------------------------------
 stat : if_stat 
      | while_stat
 	 ;
@@ -50,6 +50,8 @@ stat_block
 block
  : stat*
  ;
+
+// --------------------------------------------- grammar -------------------------------------------------------
 
 NOT : '!';
 OPAR : '(';
