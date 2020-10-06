@@ -15,3 +15,8 @@
 /CmdOPG
 /Compiler
 /impl
+*.class
+*.interp
+*.tokens
+implBaseListener.java
+implListener.java
