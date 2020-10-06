@@ -10,9 +10,9 @@ program : c=command                                          # SingleCommand
 	
 command : x=ID '=' e=expr ';'	                             # Assignment
 	| 'output' e=expr ';'                                    # Output
-	| 'if' '(' c=condition ')' '{'  '}'                       # if               // mellem tuborg parateserne skal der stå program
-	| 'else' '(' c=condition ')' '{' '}'                     # else             // mellem tuborg parateserne skal der stå program
-    | 'while' '('c=condition')' p=program                    # WhileLoop
+	| 'if' '(' c=condition ')'   p=program                   # if               
+	| 'else' '(' c=condition ')' p=program                   # else             
+    | 'while' '('c=condition')'  p=program                   # WhileLoop
 	;
 	
 expr : c=CONST                                               # Constant 
