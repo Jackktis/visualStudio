@@ -53,10 +53,12 @@ while (a < 10) {
 }
 */
 
+/* 
 // for i test
 n = 10;
 for(i=0..n){
-a = i
+a = i;
 output a;
-i = i +1;
+i = i++;
+*/
 }
