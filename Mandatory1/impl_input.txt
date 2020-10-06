@@ -11,7 +11,7 @@ output result;
 */
 
 
-
+/*
 b = true
 a = 1
 if( a > 0 ){
@@ -21,10 +21,8 @@ output b;
 }
 
 output a;
-
-
-/*
-a = 4 - 2;
-output a;
-
 */
+
+
+a = (4 - 2)*2;
+output a;

@@ -65,6 +65,30 @@ public interface implListener extends ParseTreeListener {
 	 */
 	void exitOutput(implParser.OutputContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code if}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void enterIf(implParser.IfContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code if}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void exitIf(implParser.IfContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code else}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void enterElse(implParser.ElseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code else}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void exitElse(implParser.ElseContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code WhileLoop}
 	 * labeled alternative in {@link implParser#command}.
 	 * @param ctx the parse tree
@@ -148,66 +172,6 @@ public interface implListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMinus(implParser.MinusContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link implParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterStat(implParser.StatContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link implParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitStat(implParser.StatContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link implParser#if_stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterIf_stat(implParser.If_statContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link implParser#if_stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitIf_stat(implParser.If_statContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link implParser#while_stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterWhile_stat(implParser.While_statContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link implParser#while_stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitWhile_stat(implParser.While_statContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link implParser#condition_block}.
-	 * @param ctx the parse tree
-	 */
-	void enterCondition_block(implParser.Condition_blockContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link implParser#condition_block}.
-	 * @param ctx the parse tree
-	 */
-	void exitCondition_block(implParser.Condition_blockContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link implParser#stat_block}.
-	 * @param ctx the parse tree
-	 */
-	void enterStat_block(implParser.Stat_blockContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link implParser#stat_block}.
-	 * @param ctx the parse tree
-	 */
-	void exitStat_block(implParser.Stat_blockContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link implParser#block}.
-	 * @param ctx the parse tree
-	 */
-	void enterBlock(implParser.BlockContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link implParser#block}.
-	 * @param ctx the parse tree
-	 */
-	void exitBlock(implParser.BlockContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Or}
 	 * labeled alternative in {@link implParser#condition}.

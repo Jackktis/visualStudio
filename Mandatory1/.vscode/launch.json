@@ -1,0 +1,15 @@
+{
+    "version": "2.2.4",
+    "configurations": [
+        {
+            "name": "Debug ANTLR4 grammar", 
+            "type": "antlr-debug",
+            "request": "launch",
+            "input": "${fileDirname}/impl_input.txt", //Input text file. should be in the same directory as the .g4 file
+            "grammar": "${file}",                // The grammar you're to run.
+            "startRule": "start",               // The top rule, should always be named start.
+            "printParseTree": true,
+            "visualParseTree": true
+        }
+    ]
+}

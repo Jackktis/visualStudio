@@ -1,7 +1,4 @@
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-
-import sun.font.TrueTypeFont;
-
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import org.antlr.v4.runtime.CharStreams;
@@ -120,81 +117,84 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 			return visit(ctx.e);
 	};
 
-	public Boolean visitCompareExpressions(implParser.CompareExpressionsContext ctx){
+	public Double visitCompareExpressions(implParser.CompareExpressionsContext ctx){
 		double v1=visit(ctx.e1);
 		double v2=visit(ctx.e2);
 		if(ctx.op.getText().equals("!=")){
-			if(!(v1.equals(v2))){
-				return true;
+			if(!(v1 ==v2)){
+				return 1.0;
 			}else{
-				return false;
+				return 0.0;
 			}
 		} else if(ctx.op.getText().equals("==")){
-			if(v1.equals(v2)){
-				return true;
+			if(v1 == v2){
+				return 1.0;
 			}else{
-				return false;
+				return 0.0;
 			}
 		} else if(ctx.op.getText().equals(">")){
 			if(v1 > v2){
-				return true;
+				return 1.0;
 			}else{
-				return false;
+				return 0.0;
 			}
 		} else if(ctx.op.getText().equals("<")){
 			if(v1 < v2){
-				return true;
+				return 1.0;
 			}else{
-				return false;
+				return 0.0;
 			}
 		} else if(ctx.op.getText().equals(">=")){
 			if(v1 >= v2){
-				return true;
+				return 1.0;
 			}else{
-				return false;
+				return 0.0;
 			}
 		} else if(ctx.op.getText().equals("<=")){
 			if(v1 <= v2){
-				return true;
+				return 1.0;
 			}else{
-				return false;
+				return 0.0;
 			}
 		}
 
+		return 0.0;
 	};
 
-	public Boolean visitAnd(implParser.AndContext ctx){
-		boolean c1=visit(ctx.con1);
-		boolean c2=visit(ctx.con2);
+	public Double visitAnd(implParser.AndContext ctx){
+		double c1=visit(ctx.con1);
+		double c2=visit(ctx.con2);
 		if(ctx.op.getText().equals("&&")){
-			if ((boolean)c1 == true && (boolean)c2 == true){
-				return true;
+			if (c1 == 1.0 && c2 == 1.0){
+				return 1.0;
 			}else{
-				return false;
-			}
-			if (c1 == false && c2 == false){
-				return true;
-			}else{
-				return false;
+				return 0.0;
 			}
 		}
+		return 0.0;
 	};
 
-	public Boolean visitOr(implParser.OrContext ctx){
-		boolean c1=visit(ctx.con1);
-		boolean c2=visit(ctx.con2);
+	public Double visitOr(implParser.OrContext ctx){
+		double c1=visit(ctx.con1);
+		double c2=visit(ctx.con2);
 		if(ctx.op.getText().equals("||")){
-			if (c1 == false && c2 == false){
-				return false;
+			if (c1 == 0.0 && c2 == 0.0){
+				return 0.0;
 			} else{
-				return true;
+				return 1.0;
 			}
 		}
+		return 0.0;
 	};
 
+	public Double visitElse(implParser.ElseContext ctx){
+		return 1.0;
+	};
+
+	public Double visitIf(implParser.IfContext ctx){
+		return 1.0;
+	};
 	// TODO: 
-	/* for loop, array[i] samt få vore conditioner til at fungere. 
-
-
+	/* for loop, array[i] samt få vore conditioner til at fungere. */
 }
 

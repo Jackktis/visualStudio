@@ -10,7 +10,7 @@ program : c=command                                          # SingleCommand
 	
 command : x=ID '=' e=expr ';'	                             # Assignment
 	| 'output' e=expr ';'                                    # Output
-	| 'if' '(' c=condition ')' '{' '}'                       # if               // mellem tuborg parateserne skal der stå program
+	| 'if' '(' c=condition ')' '{'  '}'                       # if               // mellem tuborg parateserne skal der stå program
 	| 'else' '(' c=condition ')' '{' '}'                     # else             // mellem tuborg parateserne skal der stå program
     | 'while' '('c=condition')' p=program                    # WhileLoop
 	;
@@ -30,6 +30,7 @@ condition :  e1=expr op=COMPARE e2=expr                      # CompareExpression
 
 
 // -------------------------------------------- statements ------------------------------------------------------
+/* 
 stat : if_stat 
      | while_stat
 	 ;
@@ -50,7 +51,7 @@ stat_block
 block
  : stat*
  ;
-
+*/
 // --------------------------------------------- grammar -------------------------------------------------------
 
 NOT : '!';
