@@ -4,24 +4,25 @@ grammar impl;
 
 start   :  cs+=command* EOF ;
 
-program : c=command                                          # SingleCommand
-	| '{' cs+=command* '}'                                   # MultipleCommands
+program : c=command                                                 # SingleCommand
+	| '{' cs+=command* '}'                                          # MultipleCommands
 	;
 	
-command : x=ID '=' e=expr ';'	                             # Assignment
-	| 'output' e=expr ';'                                    # Output
+command : x=ID '=' e=expr ';'	                                    # Assignment
+	| 'output' e=expr ';'                                           # Output
 	| 'if' '(' con1=condition ')' p=program ('else' p2=program)+	#IfElseStmt
 	| 'if' '(' con1=condition ')' p=program ('elseif' '(' con2=condition ')' p2=program ) ( 'else' p3=program )+ #ElseIfStmt
-    | 'while' '('con1=condition')' p=program                 # WhileLoop
-	| 'for' '(' i=expr '..' n=expr')' p=program              #ForI
+    | 'while' '('con1=condition')' p=program                        # WhileLoop
+	| 'for' '(' x=ID '=' e1=expr '..' e2=expr')' p=program          # ForI
 	;
 	
-expr : c=CONST                                               # Constant 
-     | e1=expr op=MULDEV e2=expr                             # Multiplication
-     | e1=expr op=ADDSUB e2=expr                             # Addition
-     | op=ADDSUB e=expr                                      # Minus
-	 | x=ID		                                             # Variable
-     | '(' e=expr ')'                                        # Parenthesis 
+expr : c=CONST                                                      # Constant 
+     | e1=expr op=MULDEV e2=expr                                    # Multiplication
+     | e1=expr op=ADDSUB e2=expr                                    # Addition
+     | op=ADDSUB e=expr                                             # Minus
+	 | x=ID		                                                    # Variable
+     | '(' e=expr ')'                                               # Parenthesis 
+	 | e=expr'++'                                                   # Increment
      ;
 
 condition :  e1=expr op=COMPARE e2=expr                      # CompareExpressions

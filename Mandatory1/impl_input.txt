@@ -41,13 +41,22 @@ elseif (1 < 0) {
 else { 
   a = 2; 
 }
+output a; 
+*/
 
-output a; */
-
-
+/*
 // While loop test
 a = 0;
 while (a < 10) {
   a = a + 1;
   output a;
+}
+*/
+
+// for i test
+n = 10;
+for(i=0..n){
+a = i
+output a;
+i = i +1;
 }

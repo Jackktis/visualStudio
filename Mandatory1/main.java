@@ -206,7 +206,22 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 		}
 		return 0.0;
 	};
+	public Double visitForI(implParser.ForIContext ctx) {
+		Double i=visit(ctx.e1);
+		Double n=visit(ctx.e2);
 
+		env.setVariable(ctx.x.getText(),i);
+
+		for(i.intValue(); env.getVariable(ctx.x.getText()) <= n.intValue(); i++) {
+			visit(ctx.p);
+		}
+		return 0.0;
+	};
+
+	public Double visitIncrement(implParser.IncrementContext ctx) {
+		Double i=visit(ctx.e); 
+		return i+1;
+	};
 	
 	// TODO: 
 	/* for loop, array[i] samt få vore conditioner til at fungere. */

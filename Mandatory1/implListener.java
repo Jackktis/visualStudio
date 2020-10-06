@@ -101,6 +101,18 @@ public interface implListener extends ParseTreeListener {
 	 */
 	void exitWhileLoop(implParser.WhileLoopContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code ForI}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void enterForI(implParser.ForIContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ForI}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void exitForI(implParser.ForIContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code Parenthesis}
 	 * labeled alternative in {@link implParser#expr}.
 	 * @param ctx the parse tree
@@ -160,6 +172,18 @@ public interface implListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConstant(implParser.ConstantContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Increment}
+	 * labeled alternative in {@link implParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterIncrement(implParser.IncrementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Increment}
+	 * labeled alternative in {@link implParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitIncrement(implParser.IncrementContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Minus}
 	 * labeled alternative in {@link implParser#expr}.
