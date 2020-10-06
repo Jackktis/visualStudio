@@ -75,7 +75,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
     }
 
     public Double visitWhileLoop(implParser.WhileLoopContext ctx){
-		while(visit(ctx.c).equals(1.0)) {
+		while(visit(ctx.con1).equals(1.0)) {
 			visit(ctx.p);
 		}
 
@@ -203,13 +203,6 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 			visit(ctx.p2);
 		} else {
 			visit(ctx.p3);
-		}
-		return 0.0;
-	};
-
-	public Double visitIf(implParser.IfContext ctx){
-		if (visit(ctx.con1).equals(1.0)) {
-			visit(ctx.p);
 		}
 		return 0.0;
 	};

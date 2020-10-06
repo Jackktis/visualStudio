@@ -10,10 +10,9 @@ program : c=command                                          # SingleCommand
 	
 command : x=ID '=' e=expr ';'	                             # Assignment
 	| 'output' e=expr ';'                                    # Output
-	| 'if' '(' c=condition ')' p=program                     # if               // mellem tuborg parateserne skal der stå program
-	| 'if' '(' c=condition ')' p=program ('else' p2=program)+	#IfElseStmt
+	| 'if' '(' con1=condition ')' p=program ('else' p2=program)+	#IfElseStmt
 	| 'if' '(' con1=condition ')' p=program ('elseif' '(' con2=condition ')' p2=program ) ( 'else' p3=program )+ #ElseIfStmt
-    | 'while' '('c=condition')' p=program                    # WhileLoop
+    | 'while' '('con1=condition')' p=program                    # WhileLoop
 	;
 	
 expr : c=CONST                                               # Constant 
@@ -55,7 +54,6 @@ block
 */
 // --------------------------------------------- grammar -------------------------------------------------------
 
-NOT : '!';
 OPAR : '(';
 CPAR : ')';
 OBRACE : '{';
@@ -63,12 +61,14 @@ CBRACE : '}';
 IF : 'if';
 ELSE : 'else';
 WHILE : 'while';
+BOOL : ('false' | 'true' | 'False' | 'True');
 
 MULDEV : ('*' | '/');
 ADDSUB : ('+' | '-');
 
 CONST : [0-9]+ ('.' [0-9]+)? ;             
 
+PREFIX : '!';
 COMPARE : ('!=' | '==' | '>' | '<' | '>=' | '<=');
 AND : ('&&');
 OR : ('||');

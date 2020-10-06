@@ -65,18 +65,6 @@ public interface implListener extends ParseTreeListener {
 	 */
 	void exitOutput(implParser.OutputContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code if}
-	 * labeled alternative in {@link implParser#command}.
-	 * @param ctx the parse tree
-	 */
-	void enterIf(implParser.IfContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code if}
-	 * labeled alternative in {@link implParser#command}.
-	 * @param ctx the parse tree
-	 */
-	void exitIf(implParser.IfContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code IfElseStmt}
 	 * labeled alternative in {@link implParser#command}.
 	 * @param ctx the parse tree
@@ -89,17 +77,17 @@ public interface implListener extends ParseTreeListener {
 	 */
 	void exitIfElseStmt(implParser.IfElseStmtContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code ElseIf}
+	 * Enter a parse tree produced by the {@code ElseIfStmt}
 	 * labeled alternative in {@link implParser#command}.
 	 * @param ctx the parse tree
 	 */
-	void enterElseIf(implParser.ElseIfContext ctx);
+	void enterElseIfStmt(implParser.ElseIfStmtContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code ElseIf}
+	 * Exit a parse tree produced by the {@code ElseIfStmt}
 	 * labeled alternative in {@link implParser#command}.
 	 * @param ctx the parse tree
 	 */
-	void exitElseIf(implParser.ElseIfContext ctx);
+	void exitElseIfStmt(implParser.ElseIfStmtContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code WhileLoop}
 	 * labeled alternative in {@link implParser#command}.

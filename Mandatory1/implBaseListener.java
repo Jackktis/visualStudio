@@ -75,18 +75,6 @@ public class implBaseListener implements implListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIf(implParser.IfContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitIf(implParser.IfContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterIfElseStmt(implParser.IfElseStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -99,13 +87,13 @@ public class implBaseListener implements implListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElseIf(implParser.ElseIfContext ctx) { }
+	@Override public void enterElseIfStmt(implParser.ElseIfStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElseIf(implParser.ElseIfContext ctx) { }
+	@Override public void exitElseIfStmt(implParser.ElseIfStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
