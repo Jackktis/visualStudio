@@ -30,6 +30,7 @@ output a;
 */
 
 
+// if, else, elseif test
 /*
 if (1 == 2) { 
   a = 0; 
@@ -43,8 +44,10 @@ else {
 
 output a; */
 
+
+// While loop test
 a = 0;
-while (1 == 1) {
+while (a < 10) {
   a = a + 1;
   output a;
 }
