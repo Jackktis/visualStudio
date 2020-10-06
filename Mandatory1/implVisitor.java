@@ -72,6 +72,13 @@ public interface implVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitWhileLoop(implParser.WhileLoopContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code ForI}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForI(implParser.ForIContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Parenthesis}
 	 * labeled alternative in {@link implParser#expr}.
 	 * @param ctx the parse tree
@@ -113,6 +120,13 @@ public interface implVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitConstant(implParser.ConstantContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Increment}
+	 * labeled alternative in {@link implParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIncrement(implParser.IncrementContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Minus}
 	 * labeled alternative in {@link implParser#expr}.
