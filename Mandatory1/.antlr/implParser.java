@@ -1,4 +1,4 @@
-// Generated from /home/gonhk/CT/Mandatory1/impl.g4 by ANTLR 4.8
+// Generated from /home/s195479/visualStudio/Mandatory1/impl.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -16,10 +16,9 @@ public class implParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, OPAR=5, CPAR=6, OBRACE=7, CBRACE=8, IF=9, 
-		ELSE=10, WHILE=11, BOOL=12, MULDEV=13, ADDSUB=14, CONST=15, PREFIX=16, 
-		COMPARE=17, AND=18, OR=19, ID=20, FLOAT=21, ALPHA=22, NUM=23, WHITESPACE=24, 
-		COMMENT=25, COMMENT2=26;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
+		T__9=10, T__10=11, MULDEV=12, ADDSUB=13, CONST=14, COMPARE=15, AND=16, 
+		OR=17, ID=18, FLOAT=19, ALPHA=20, NUM=21, WHITESPACE=22, COMMENT=23, COMMENT2=24;
 	public static final int
 		RULE_start = 0, RULE_program = 1, RULE_command = 2, RULE_expr = 3, RULE_condition = 4;
 	private static String[] makeRuleNames() {
@@ -31,17 +30,16 @@ public class implParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'='", "';'", "'output'", "'elseif'", "'('", "')'", "'{'", "'}'", 
-			"'if'", "'else'", "'while'", null, null, null, null, "'!'"
+			null, "'{'", "'}'", "'='", "';'", "'output'", "'if'", "'('", "')'", "'else'", 
+			"'elseif'", "'while'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, "OPAR", "CPAR", "OBRACE", "CBRACE", "IF", 
-			"ELSE", "WHILE", "BOOL", "MULDEV", "ADDSUB", "CONST", "PREFIX", "COMPARE", 
-			"AND", "OR", "ID", "FLOAT", "ALPHA", "NUM", "WHITESPACE", "COMMENT", 
-			"COMMENT2"
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			"MULDEV", "ADDSUB", "CONST", "COMPARE", "AND", "OR", "ID", "FLOAT", "ALPHA", 
+			"NUM", "WHITESPACE", "COMMENT", "COMMENT2"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -121,7 +119,7 @@ public class implParser extends Parser {
 			setState(13);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << IF) | (1L << WHILE) | (1L << ID))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__4) | (1L << T__5) | (1L << T__10) | (1L << ID))) != 0)) {
 				{
 				{
 				setState(10);
@@ -162,8 +160,6 @@ public class implParser extends Parser {
 	public static class MultipleCommandsContext extends ProgramContext {
 		public CommandContext command;
 		public List<CommandContext> cs = new ArrayList<CommandContext>();
-		public TerminalNode OBRACE() { return getToken(implParser.OBRACE, 0); }
-		public TerminalNode CBRACE() { return getToken(implParser.CBRACE, 0); }
 		public List<CommandContext> command() {
 			return getRuleContexts(CommandContext.class);
 		}
@@ -188,9 +184,9 @@ public class implParser extends Parser {
 			setState(27);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__2:
-			case IF:
-			case WHILE:
+			case T__4:
+			case T__5:
+			case T__10:
 			case ID:
 				_localctx = new SingleCommandContext(_localctx);
 				enterOuterAlt(_localctx, 1);
@@ -199,16 +195,16 @@ public class implParser extends Parser {
 				((SingleCommandContext)_localctx).c = command();
 				}
 				break;
-			case OBRACE:
+			case T__0:
 				_localctx = new MultipleCommandsContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(19);
-				match(OBRACE);
+				match(T__0);
 				setState(23);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << IF) | (1L << WHILE) | (1L << ID))) != 0)) {
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__4) | (1L << T__5) | (1L << T__10) | (1L << ID))) != 0)) {
 					{
 					{
 					setState(20);
@@ -221,7 +217,7 @@ public class implParser extends Parser {
 					_la = _input.LA(1);
 				}
 				setState(26);
-				match(CBRACE);
+				match(T__1);
 				}
 				break;
 			default:
@@ -265,15 +261,6 @@ public class implParser extends Parser {
 		public ConditionContext con2;
 		public ProgramContext p2;
 		public ProgramContext p3;
-		public TerminalNode IF() { return getToken(implParser.IF, 0); }
-		public List<TerminalNode> OPAR() { return getTokens(implParser.OPAR); }
-		public TerminalNode OPAR(int i) {
-			return getToken(implParser.OPAR, i);
-		}
-		public List<TerminalNode> CPAR() { return getTokens(implParser.CPAR); }
-		public TerminalNode CPAR(int i) {
-			return getToken(implParser.CPAR, i);
-		}
 		public List<ConditionContext> condition() {
 			return getRuleContexts(ConditionContext.class);
 		}
@@ -286,19 +273,12 @@ public class implParser extends Parser {
 		public ProgramContext program(int i) {
 			return getRuleContext(ProgramContext.class,i);
 		}
-		public List<TerminalNode> ELSE() { return getTokens(implParser.ELSE); }
-		public TerminalNode ELSE(int i) {
-			return getToken(implParser.ELSE, i);
-		}
 		public ElseIfStmtContext(CommandContext ctx) { copyFrom(ctx); }
 	}
 	public static class IfElseStmtContext extends CommandContext {
 		public ConditionContext con1;
 		public ProgramContext p;
 		public ProgramContext p2;
-		public TerminalNode IF() { return getToken(implParser.IF, 0); }
-		public TerminalNode OPAR() { return getToken(implParser.OPAR, 0); }
-		public TerminalNode CPAR() { return getToken(implParser.CPAR, 0); }
 		public ConditionContext condition() {
 			return getRuleContext(ConditionContext.class,0);
 		}
@@ -307,10 +287,6 @@ public class implParser extends Parser {
 		}
 		public ProgramContext program(int i) {
 			return getRuleContext(ProgramContext.class,i);
-		}
-		public List<TerminalNode> ELSE() { return getTokens(implParser.ELSE); }
-		public TerminalNode ELSE(int i) {
-			return getToken(implParser.ELSE, i);
 		}
 		public IfElseStmtContext(CommandContext ctx) { copyFrom(ctx); }
 	}
@@ -324,9 +300,6 @@ public class implParser extends Parser {
 	public static class WhileLoopContext extends CommandContext {
 		public ConditionContext con1;
 		public ProgramContext p;
-		public TerminalNode WHILE() { return getToken(implParser.WHILE, 0); }
-		public TerminalNode OPAR() { return getToken(implParser.OPAR, 0); }
-		public TerminalNode CPAR() { return getToken(implParser.CPAR, 0); }
 		public ConditionContext condition() {
 			return getRuleContext(ConditionContext.class,0);
 		}
@@ -351,11 +324,11 @@ public class implParser extends Parser {
 				setState(29);
 				((AssignmentContext)_localctx).x = match(ID);
 				setState(30);
-				match(T__0);
+				match(T__2);
 				setState(31);
 				((AssignmentContext)_localctx).e = expr(0);
 				setState(32);
-				match(T__1);
+				match(T__3);
 				}
 				break;
 			case 2:
@@ -363,11 +336,11 @@ public class implParser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(34);
-				match(T__2);
+				match(T__4);
 				setState(35);
 				((OutputContext)_localctx).e = expr(0);
 				setState(36);
-				match(T__1);
+				match(T__3);
 				}
 				break;
 			case 3:
@@ -375,13 +348,13 @@ public class implParser extends Parser {
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(38);
-				match(IF);
+				match(T__5);
 				setState(39);
-				match(OPAR);
+				match(T__6);
 				setState(40);
 				((IfElseStmtContext)_localctx).con1 = condition(0);
 				setState(41);
-				match(CPAR);
+				match(T__7);
 				setState(42);
 				((IfElseStmtContext)_localctx).p = program();
 				setState(45); 
@@ -393,7 +366,7 @@ public class implParser extends Parser {
 						{
 						{
 						setState(43);
-						match(ELSE);
+						match(T__8);
 						setState(44);
 						((IfElseStmtContext)_localctx).p2 = program();
 						}
@@ -413,24 +386,24 @@ public class implParser extends Parser {
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(49);
-				match(IF);
+				match(T__5);
 				setState(50);
-				match(OPAR);
+				match(T__6);
 				setState(51);
 				((ElseIfStmtContext)_localctx).con1 = condition(0);
 				setState(52);
-				match(CPAR);
+				match(T__7);
 				setState(53);
 				((ElseIfStmtContext)_localctx).p = program();
 				{
 				setState(54);
-				match(T__3);
+				match(T__9);
 				setState(55);
-				match(OPAR);
+				match(T__6);
 				setState(56);
 				((ElseIfStmtContext)_localctx).con2 = condition(0);
 				setState(57);
-				match(CPAR);
+				match(T__7);
 				setState(58);
 				((ElseIfStmtContext)_localctx).p2 = program();
 				}
@@ -443,7 +416,7 @@ public class implParser extends Parser {
 						{
 						{
 						setState(60);
-						match(ELSE);
+						match(T__8);
 						setState(61);
 						((ElseIfStmtContext)_localctx).p3 = program();
 						}
@@ -463,13 +436,13 @@ public class implParser extends Parser {
 				enterOuterAlt(_localctx, 5);
 				{
 				setState(66);
-				match(WHILE);
+				match(T__10);
 				setState(67);
-				match(OPAR);
+				match(T__6);
 				setState(68);
 				((WhileLoopContext)_localctx).con1 = condition(0);
 				setState(69);
-				match(CPAR);
+				match(T__7);
 				setState(70);
 				((WhileLoopContext)_localctx).p = program();
 				}
@@ -500,8 +473,6 @@ public class implParser extends Parser {
 	}
 	public static class ParenthesisContext extends ExprContext {
 		public ExprContext e;
-		public TerminalNode OPAR() { return getToken(implParser.OPAR, 0); }
-		public TerminalNode CPAR() { return getToken(implParser.CPAR, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
@@ -601,17 +572,17 @@ public class implParser extends Parser {
 				((VariableContext)_localctx).x = match(ID);
 				}
 				break;
-			case OPAR:
+			case T__6:
 				{
 				_localctx = new ParenthesisContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(79);
-				match(OPAR);
+				match(T__6);
 				setState(80);
 				((ParenthesisContext)_localctx).e = expr(0);
 				setState(81);
-				match(CPAR);
+				match(T__7);
 				}
 				break;
 			default:
@@ -840,7 +811,7 @@ public class implParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\34s\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\32s\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\7\2\16\n\2\f\2\16\2\21\13\2\3\2\3\2\3\3"+
 		"\3\3\3\3\7\3\30\n\3\f\3\16\3\33\13\3\3\3\5\3\36\n\3\3\4\3\4\3\4\3\4\3"+
 		"\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\6\4\60\n\4\r\4\16\4\61"+
@@ -851,24 +822,24 @@ public class implParser extends Parser {
 		"\2\4\6\b\n\2\2\2}\2\17\3\2\2\2\4\35\3\2\2\2\6J\3\2\2\2\bU\3\2\2\2\nb\3"+
 		"\2\2\2\f\16\5\6\4\2\r\f\3\2\2\2\16\21\3\2\2\2\17\r\3\2\2\2\17\20\3\2\2"+
 		"\2\20\22\3\2\2\2\21\17\3\2\2\2\22\23\7\2\2\3\23\3\3\2\2\2\24\36\5\6\4"+
-		"\2\25\31\7\t\2\2\26\30\5\6\4\2\27\26\3\2\2\2\30\33\3\2\2\2\31\27\3\2\2"+
-		"\2\31\32\3\2\2\2\32\34\3\2\2\2\33\31\3\2\2\2\34\36\7\n\2\2\35\24\3\2\2"+
-		"\2\35\25\3\2\2\2\36\5\3\2\2\2\37 \7\26\2\2 !\7\3\2\2!\"\5\b\5\2\"#\7\4"+
-		"\2\2#K\3\2\2\2$%\7\5\2\2%&\5\b\5\2&\'\7\4\2\2\'K\3\2\2\2()\7\13\2\2)*"+
-		"\7\7\2\2*+\5\n\6\2+,\7\b\2\2,/\5\4\3\2-.\7\f\2\2.\60\5\4\3\2/-\3\2\2\2"+
-		"\60\61\3\2\2\2\61/\3\2\2\2\61\62\3\2\2\2\62K\3\2\2\2\63\64\7\13\2\2\64"+
-		"\65\7\7\2\2\65\66\5\n\6\2\66\67\7\b\2\2\678\5\4\3\289\7\6\2\29:\7\7\2"+
-		"\2:;\5\n\6\2;<\7\b\2\2<=\5\4\3\2=@\3\2\2\2>?\7\f\2\2?A\5\4\3\2@>\3\2\2"+
-		"\2AB\3\2\2\2B@\3\2\2\2BC\3\2\2\2CK\3\2\2\2DE\7\r\2\2EF\7\7\2\2FG\5\n\6"+
-		"\2GH\7\b\2\2HI\5\4\3\2IK\3\2\2\2J\37\3\2\2\2J$\3\2\2\2J(\3\2\2\2J\63\3"+
-		"\2\2\2JD\3\2\2\2K\7\3\2\2\2LM\b\5\1\2MV\7\21\2\2NO\7\20\2\2OV\5\b\5\5"+
-		"PV\7\26\2\2QR\7\7\2\2RS\5\b\5\2ST\7\b\2\2TV\3\2\2\2UL\3\2\2\2UN\3\2\2"+
-		"\2UP\3\2\2\2UQ\3\2\2\2V_\3\2\2\2WX\f\7\2\2XY\7\17\2\2Y^\5\b\5\bZ[\f\6"+
-		"\2\2[\\\7\20\2\2\\^\5\b\5\7]W\3\2\2\2]Z\3\2\2\2^a\3\2\2\2_]\3\2\2\2_`"+
-		"\3\2\2\2`\t\3\2\2\2a_\3\2\2\2bc\b\6\1\2cd\5\b\5\2de\7\23\2\2ef\5\b\5\2"+
-		"fo\3\2\2\2gh\f\4\2\2hi\7\24\2\2in\5\n\6\5jk\f\3\2\2kl\7\25\2\2ln\5\n\6"+
-		"\4mg\3\2\2\2mj\3\2\2\2nq\3\2\2\2om\3\2\2\2op\3\2\2\2p\13\3\2\2\2qo\3\2"+
-		"\2\2\r\17\31\35\61BJU]_mo";
+		"\2\25\31\7\3\2\2\26\30\5\6\4\2\27\26\3\2\2\2\30\33\3\2\2\2\31\27\3\2\2"+
+		"\2\31\32\3\2\2\2\32\34\3\2\2\2\33\31\3\2\2\2\34\36\7\4\2\2\35\24\3\2\2"+
+		"\2\35\25\3\2\2\2\36\5\3\2\2\2\37 \7\24\2\2 !\7\5\2\2!\"\5\b\5\2\"#\7\6"+
+		"\2\2#K\3\2\2\2$%\7\7\2\2%&\5\b\5\2&\'\7\6\2\2\'K\3\2\2\2()\7\b\2\2)*\7"+
+		"\t\2\2*+\5\n\6\2+,\7\n\2\2,/\5\4\3\2-.\7\13\2\2.\60\5\4\3\2/-\3\2\2\2"+
+		"\60\61\3\2\2\2\61/\3\2\2\2\61\62\3\2\2\2\62K\3\2\2\2\63\64\7\b\2\2\64"+
+		"\65\7\t\2\2\65\66\5\n\6\2\66\67\7\n\2\2\678\5\4\3\289\7\f\2\29:\7\t\2"+
+		"\2:;\5\n\6\2;<\7\n\2\2<=\5\4\3\2=@\3\2\2\2>?\7\13\2\2?A\5\4\3\2@>\3\2"+
+		"\2\2AB\3\2\2\2B@\3\2\2\2BC\3\2\2\2CK\3\2\2\2DE\7\r\2\2EF\7\t\2\2FG\5\n"+
+		"\6\2GH\7\n\2\2HI\5\4\3\2IK\3\2\2\2J\37\3\2\2\2J$\3\2\2\2J(\3\2\2\2J\63"+
+		"\3\2\2\2JD\3\2\2\2K\7\3\2\2\2LM\b\5\1\2MV\7\20\2\2NO\7\17\2\2OV\5\b\5"+
+		"\5PV\7\24\2\2QR\7\t\2\2RS\5\b\5\2ST\7\n\2\2TV\3\2\2\2UL\3\2\2\2UN\3\2"+
+		"\2\2UP\3\2\2\2UQ\3\2\2\2V_\3\2\2\2WX\f\7\2\2XY\7\16\2\2Y^\5\b\5\bZ[\f"+
+		"\6\2\2[\\\7\17\2\2\\^\5\b\5\7]W\3\2\2\2]Z\3\2\2\2^a\3\2\2\2_]\3\2\2\2"+
+		"_`\3\2\2\2`\t\3\2\2\2a_\3\2\2\2bc\b\6\1\2cd\5\b\5\2de\7\21\2\2ef\5\b\5"+
+		"\2fo\3\2\2\2gh\f\4\2\2hi\7\22\2\2in\5\n\6\5jk\f\3\2\2kl\7\23\2\2ln\5\n"+
+		"\6\4mg\3\2\2\2mj\3\2\2\2nq\3\2\2\2om\3\2\2\2op\3\2\2\2p\13\3\2\2\2qo\3"+
+		"\2\2\2\r\17\31\35\61BJU]_mo";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
