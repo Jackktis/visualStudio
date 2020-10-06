@@ -1,4 +1,4 @@
-// Generated from /home/gonhk/CT/Mandatory1/impl.g4 by ANTLR 4.8
+// Generated from /home/s195479/visualStudio/Mandatory1/impl.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -18,8 +18,8 @@ public class implParser extends Parser {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, MULDEV=14, ADDSUB=15, CONST=16, 
-		COMPARE=17, AND=18, OR=19, ID=20, FLOAT=21, ALPHA=22, NUM=23, WHITESPACE=24, 
-		COMMENT=25, COMMENT2=26;
+		COMPARE=17, NOT=18, AND=19, OR=20, ID=21, FLOAT=22, ALPHA=23, NUM=24, 
+		WHITESPACE=25, COMMENT=26, COMMENT2=27;
 	public static final int
 		RULE_start = 0, RULE_program = 1, RULE_command = 2, RULE_expr = 3, RULE_condition = 4;
 	private static String[] makeRuleNames() {
@@ -32,15 +32,15 @@ public class implParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'{'", "'}'", "'='", "';'", "'['", "']'", "'output'", "'if'", "'('", 
-			"')'", "'else'", "'elseif'", "'while'"
+			"')'", "'else'", "'elseif'", "'while'", null, null, null, null, "'~'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, "MULDEV", "ADDSUB", "CONST", "COMPARE", "AND", "OR", "ID", 
-			"FLOAT", "ALPHA", "NUM", "WHITESPACE", "COMMENT", "COMMENT2"
+			null, null, "MULDEV", "ADDSUB", "CONST", "COMPARE", "NOT", "AND", "OR", 
+			"ID", "FLOAT", "ALPHA", "NUM", "WHITESPACE", "COMMENT", "COMMENT2"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -867,7 +867,7 @@ public class implParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\34\u0080\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\35\u0080\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\7\2\16\n\2\f\2\16\2\21\13\2\3\2\3"+
 		"\2\3\3\3\3\3\3\7\3\30\n\3\f\3\16\3\33\13\3\3\3\5\3\36\n\3\3\4\3\4\3\4"+
 		"\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3"+
@@ -881,8 +881,8 @@ public class implParser extends Parser {
 		"\2\2\2\21\17\3\2\2\2\22\23\7\2\2\3\23\3\3\2\2\2\24\36\5\6\4\2\25\31\7"+
 		"\3\2\2\26\30\5\6\4\2\27\26\3\2\2\2\30\33\3\2\2\2\31\27\3\2\2\2\31\32\3"+
 		"\2\2\2\32\34\3\2\2\2\33\31\3\2\2\2\34\36\7\4\2\2\35\24\3\2\2\2\35\25\3"+
-		"\2\2\2\36\5\3\2\2\2\37 \7\26\2\2 !\7\5\2\2!\"\5\b\5\2\"#\7\6\2\2#S\3\2"+
-		"\2\2$%\7\26\2\2%&\7\7\2\2&\'\5\b\5\2\'(\7\b\2\2()\7\5\2\2)*\5\b\5\2*+"+
+		"\2\2\2\36\5\3\2\2\2\37 \7\27\2\2 !\7\5\2\2!\"\5\b\5\2\"#\7\6\2\2#S\3\2"+
+		"\2\2$%\7\27\2\2%&\7\7\2\2&\'\5\b\5\2\'(\7\b\2\2()\7\5\2\2)*\5\b\5\2*+"+
 		"\7\6\2\2+S\3\2\2\2,-\7\t\2\2-.\5\b\5\2./\7\6\2\2/S\3\2\2\2\60\61\7\n\2"+
 		"\2\61\62\7\13\2\2\62\63\5\n\6\2\63\64\7\f\2\2\64\67\5\4\3\2\65\66\7\r"+
 		"\2\2\668\5\4\3\2\67\65\3\2\2\289\3\2\2\29\67\3\2\2\29:\3\2\2\2:S\3\2\2"+
@@ -891,12 +891,12 @@ public class implParser extends Parser {
 		"\2\2IJ\3\2\2\2JH\3\2\2\2JK\3\2\2\2KS\3\2\2\2LM\7\17\2\2MN\7\13\2\2NO\5"+
 		"\n\6\2OP\7\f\2\2PQ\5\4\3\2QS\3\2\2\2R\37\3\2\2\2R$\3\2\2\2R,\3\2\2\2R"+
 		"\60\3\2\2\2R;\3\2\2\2RL\3\2\2\2S\7\3\2\2\2TU\b\5\1\2Uc\7\22\2\2VW\7\21"+
-		"\2\2Wc\5\b\5\6Xc\7\26\2\2YZ\7\26\2\2Z[\7\7\2\2[\\\5\b\5\2\\]\7\b\2\2]"+
+		"\2\2Wc\5\b\5\6Xc\7\27\2\2YZ\7\27\2\2Z[\7\7\2\2[\\\5\b\5\2\\]\7\b\2\2]"+
 		"c\3\2\2\2^_\7\13\2\2_`\5\b\5\2`a\7\f\2\2ac\3\2\2\2bT\3\2\2\2bV\3\2\2\2"+
 		"bX\3\2\2\2bY\3\2\2\2b^\3\2\2\2cl\3\2\2\2de\f\b\2\2ef\7\20\2\2fk\5\b\5"+
 		"\tgh\f\7\2\2hi\7\21\2\2ik\5\b\5\bjd\3\2\2\2jg\3\2\2\2kn\3\2\2\2lj\3\2"+
 		"\2\2lm\3\2\2\2m\t\3\2\2\2nl\3\2\2\2op\b\6\1\2pq\5\b\5\2qr\7\23\2\2rs\5"+
-		"\b\5\2s|\3\2\2\2tu\f\4\2\2uv\7\24\2\2v{\5\n\6\5wx\f\3\2\2xy\7\25\2\2y"+
+		"\b\5\2s|\3\2\2\2tu\f\4\2\2uv\7\25\2\2v{\5\n\6\5wx\f\3\2\2xy\7\26\2\2y"+
 		"{\5\n\6\4zt\3\2\2\2zw\3\2\2\2{~\3\2\2\2|z\3\2\2\2|}\3\2\2\2}\13\3\2\2"+
 		"\2~|\3\2\2\2\r\17\31\359JRbjlz|";
 	public static final ATN _ATN =

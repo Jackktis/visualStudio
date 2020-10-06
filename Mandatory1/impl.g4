@@ -38,6 +38,7 @@ ADDSUB : ('+' | '-');
 CONST : [0-9]+ ('.' [0-9]+)? ;             
 
 COMPARE : ('!=' | '==' | '>' | '<' | '>=' | '<=');
+NOT :'~';  // Not icon (this specefic icon is implemented in order to avoid conflicts with !=)
 AND : ('&&');
 OR : ('||');
 ID    : ALPHA (ALPHA|NUM)* ;	
