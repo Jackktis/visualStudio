@@ -23,6 +23,8 @@ output b;
 output a;
 */
 
-
+/* plus/minus, parentes og gange test */
+/*
 a = (4 - 2)*2;
 output a;
+*/
