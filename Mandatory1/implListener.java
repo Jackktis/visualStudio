@@ -77,17 +77,29 @@ public interface implListener extends ParseTreeListener {
 	 */
 	void exitIf(implParser.IfContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code else}
+	 * Enter a parse tree produced by the {@code IfElseStmt}
 	 * labeled alternative in {@link implParser#command}.
 	 * @param ctx the parse tree
 	 */
-	void enterElse(implParser.ElseContext ctx);
+	void enterIfElseStmt(implParser.IfElseStmtContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code else}
+	 * Exit a parse tree produced by the {@code IfElseStmt}
 	 * labeled alternative in {@link implParser#command}.
 	 * @param ctx the parse tree
 	 */
-	void exitElse(implParser.ElseContext ctx);
+	void exitIfElseStmt(implParser.IfElseStmtContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ElseIf}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void enterElseIf(implParser.ElseIfContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ElseIf}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 */
+	void exitElseIf(implParser.ElseIfContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code WhileLoop}
 	 * labeled alternative in {@link implParser#command}.

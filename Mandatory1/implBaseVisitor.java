@@ -58,7 +58,14 @@ public class implBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements i
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitElse(implParser.ElseContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIfElseStmt(implParser.IfElseStmtContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitElseIf(implParser.ElseIfContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

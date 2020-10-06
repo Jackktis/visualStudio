@@ -11,8 +11,8 @@ program : c=command                                          # SingleCommand
 command : x=ID '=' e=expr ';'	                             # Assignment
 	| 'output' e=expr ';'                                    # Output
 	| 'if' '(' c=condition ')' p=program                     # if               // mellem tuborg parateserne skal der stå program
-	| 'if' '(' c=condition ')' p1=program ('else' p2=program)+	#IfElseStmt
-	| 'if' '(' con1=condition ')' p1=program ('elseif' '(' con2=condition ')' p2=program ) ( 'else' p3=program )+ #ElseIf
+	| 'if' '(' c=condition ')' p=program ('else' p2=program)+	#IfElseStmt
+	| 'if' '(' con1=condition ')' p=program ('elseif' '(' con2=condition ')' p2=program ) ( 'else' p3=program )+ #ElseIfStmt
     | 'while' '('c=condition')' p=program                    # WhileLoop
 	;
 	
