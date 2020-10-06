@@ -12,7 +12,8 @@ command : x=ID '=' e=expr ';'	                             # Assignment
 	| 'output' e=expr ';'                                    # Output
 	| 'if' '(' con1=condition ')' p=program ('else' p2=program)+	#IfElseStmt
 	| 'if' '(' con1=condition ')' p=program ('elseif' '(' con2=condition ')' p2=program ) ( 'else' p3=program )+ #ElseIfStmt
-    | 'while' '('con1=condition')' p=program                    # WhileLoop
+    | 'while' '('con1=condition')' p=program                 # WhileLoop
+	| 'for' '(' i=expr '..' n=expr')' p=program              #ForI
 	;
 	
 expr : c=CONST                                               # Constant 
