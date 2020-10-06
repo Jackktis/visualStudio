@@ -64,7 +64,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
     
     public Double visitAssignment(implParser.AssignmentContext ctx){
 		double v=visit(ctx.e);
-		env.setVariable(ctx.x.getText(),v);
+		env.setVariable(ctx.x.getText(), v);
 		return null;
     }
     
@@ -210,5 +210,25 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 	
 	// TODO: 
 	/* for loop, array[i] samt få vore conditioner til at fungere. */
+
+	public Double visitArrayVar(implParser.ArrayVarContext ctx) {//Index = int, cannot be a double arr[1.2] doesnt work
+		int index = visit(ctx.e1).intValue();
+		String indexStr = "[" + index + "]";
+		return env.getVariable(ctx.x.getText() + indexStr);
+	}
+
+	// ARRAY
+	public Double visitArray(implParser.ArrayContext ctx) {
+		double v1 = visit(ctx.e1);
+		double v2 = visit(ctx.e2);
+
+
+		//Index = int, cannot be a double arr[1.2] doesnt work
+		int index = visit(ctx.e1).intValue();
+		String indexStr = "[" + index + "]";
+
+		env.setVariable(ctx.x.getText() + indexStr, v2);
+		return 0.0;
+	};
 }
 

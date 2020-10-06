@@ -9,11 +9,12 @@ program : c=command                                          # SingleCommand
 	;
 	
 command : x=ID '=' e=expr ';'	                             # Assignment
+	| x=ID '[' e1=expr ']' '=' e2=expr ';'					 # Array
 	| 'output' e=expr ';'                                    # Output
 	| 'if' '(' con1=condition ')' p=program ('else' p2=program)+	#IfElseStmt
 	| 'if' '(' con1=condition ')' p=program ('elseif' '(' con2=condition ')' p2=program ) ( 'else' p3=program )+ #ElseIfStmt
     | 'while' '('con1=condition')' p=program                 # WhileLoop
-	| 'for' '(' i=expr '..' n=expr')' p=program              #ForI
+	//| 'for' '(' i=expr '..' n=expr')' p=program              #ForI
 	;
 	
 expr : c=CONST                                               # Constant 
@@ -21,6 +22,7 @@ expr : c=CONST                                               # Constant
      | e1=expr op=ADDSUB e2=expr                             # Addition
      | op=ADDSUB e=expr                                      # Minus
 	 | x=ID		                                             # Variable
+	 | x=ID '[' e1=expr ']'								     # ArrayVar
      | '(' e=expr ')'                                        # Parenthesis 
      ;
 

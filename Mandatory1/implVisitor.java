@@ -37,6 +37,13 @@ public interface implVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssignment(implParser.AssignmentContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Array}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArray(implParser.ArrayContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Output}
 	 * labeled alternative in {@link implParser#command}.
 	 * @param ctx the parse tree
@@ -92,6 +99,13 @@ public interface implVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitVariable(implParser.VariableContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ArrayVar}
+	 * labeled alternative in {@link implParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrayVar(implParser.ArrayVarContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Constant}
 	 * labeled alternative in {@link implParser#expr}.

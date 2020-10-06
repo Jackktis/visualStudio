@@ -45,9 +45,23 @@ else {
 output a; */
 
 
+/*
+
 // While loop test
 a = 0;
 while (a < 10) {
   a = a + 1;
   output a;
 }
+
+*/
+
+
+/*
+// Array test
+
+a[1] = 5;
+
+output a[1];
+
+*/
