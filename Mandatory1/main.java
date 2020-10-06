@@ -187,7 +187,11 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 		return 0.0;
 	};
 
-	public Double visitElse(implParser.ElseContext ctx){
+	public Double visitIfElseStmt(implParser.IfElseStmtContext ctx){
+		double c1=visit(ctx.con1);
+		double c2=visit(ctx.con2);
+		
+
 		return 1.0;
 	};
 
