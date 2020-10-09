@@ -206,6 +206,32 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 		}
 		return 0.0;
 	};
+
+	public Double visitIncrement(implParser.IncrementContext ctx) {
+		Double i=visit(ctx.e); 
+		return i+1;
+	};
+	
+	// ARRAY
+
+	public Double visitArrayVar(implParser.ArrayVarContext ctx) {//Index = int, cannot be a double arr[1.2] doesnt work
+		int index = visit(ctx.e1).intValue();
+		String indexStr = "[" + index + "]";
+		return env.getVariable(ctx.x.getText() + indexStr);
+	}
+
+	public Double visitArray(implParser.ArrayContext ctx) {
+		double v1 = visit(ctx.e1);
+		double v2 = visit(ctx.e2);
+
+		//Index = int, cannot be a double arr[1.2] doesnt work
+		int index = visit(ctx.e1).intValue();
+		String indexStr = "[" + index + "]";
+
+		env.setVariable(ctx.x.getText() + indexStr, v2);
+		return 0.0;
+	};
+
 	public Double visitForI(implParser.ForIContext ctx) {
 		Double i=visit(ctx.e1);
 		Double n=visit(ctx.e2);
@@ -215,34 +241,6 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 		for(i.intValue(); env.getVariable(ctx.x.getText()) <= n.intValue(); i++) {
 			visit(ctx.p);
 		}
-		return 0.0;
-	};
-
-	public Double visitIncrement(implParser.IncrementContext ctx) {
-		Double i=visit(ctx.e); 
-		return i+1;
-	};
-	
-	// TODO: 
-	/* for loop, array[i] samt få vore conditioner til at fungere. */
-
-	public Double visitArrayVar(implParser.ArrayVarContext ctx) {//Index = int, cannot be a double arr[1.2] doesnt work
-		int index = visit(ctx.e1).intValue();
-		String indexStr = "[" + index + "]";
-		return env.getVariable(ctx.x.getText() + indexStr);
-	}
-
-	// ARRAY
-	public Double visitArray(implParser.ArrayContext ctx) {
-		double v1 = visit(ctx.e1);
-		double v2 = visit(ctx.e2);
-
-
-		//Index = int, cannot be a double arr[1.2] doesnt work
-		int index = visit(ctx.e1).intValue();
-		String indexStr = "[" + index + "]";
-
-		env.setVariable(ctx.x.getText() + indexStr, v2);
 		return 0.0;
 	};
 }

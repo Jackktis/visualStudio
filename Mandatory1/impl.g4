@@ -1,6 +1,7 @@
 grammar impl;
 
 /* A small imperative language */
+/* Gruppe 20 */
 
 start   :  cs+=command* EOF ;
 
@@ -8,13 +9,13 @@ program : c=command                                                 # SingleComm
 	| '{' cs+=command* '}'                                          # MultipleCommands
 	;
 	
-command : x=ID '=' e=expr ';'	                             # Assignment
-	| x=ID '[' e1=expr ']' '=' e2=expr ';'					 # Array
-	| 'output' e=expr ';'                                    # Output
-	| 'if' '(' con1=condition ')' p=program ('else' p2=program)+	#IfElseStmt
-	| 'if' '(' con1=condition ')' p=program ('elseif' '(' con2=condition ')' p2=program ) ( 'else' p3=program )+ #ElseIfStmt
-    | 'while' '('con1=condition')' p=program                        # WhileLoop
-	| 'for' '(' x=ID '=' e1=expr '..' e2=expr')' p=program          # ForI
+command : x=ID '=' e=expr ';'	                             													 # Assignment
+	| x=ID '[' e1=expr ']' '=' e2=expr ';'					 													 # Array
+	| 'output' e=expr ';'                                    													 # Output
+	| 'if' '(' con1=condition ')' p=program ('else' p2=program)+												 # IfElseStmt
+	| 'if' '(' con1=condition ')' p=program ('elseif' '(' con2=condition ')' p2=program ) ( 'else' p3=program )+ # ElseIfStmt
+    | 'while' '('con1=condition')' p=program                        											 # WhileLoop
+	| 'for' '(' x=ID '=' e1=expr '..' e2=expr')' p=program          											 # ForI
 	;
 	
 expr : c=CONST                                               # Constant 
@@ -24,7 +25,7 @@ expr : c=CONST                                               # Constant
 	 | x=ID		                                             # Variable
 	 | x=ID '[' e1=expr ']'								     # ArrayVar
      | '(' e=expr ')'                                        # Parenthesis 
-	 | e=expr'++'                                                   # Increment
+	 | e=expr'++'                                            # Increment
      ;
 
 condition :  e1=expr op=COMPARE e2=expr                      # CompareExpressions
@@ -39,7 +40,7 @@ ADDSUB : ('+' | '-');
 CONST : [0-9]+ ('.' [0-9]+)? ;             
 
 COMPARE : ('!=' | '==' | '>' | '<' | '>=' | '<=');
-NOT :'~';  // Not icon (this specefic icon is implemented in order to avoid conflicts with !=)
+NOT :'~';  // Not character (this specific character is implemented in order to avoid conflicts with !=)
 AND : ('&&');
 OR : ('||');
 ID    : ALPHA (ALPHA|NUM)* ;	

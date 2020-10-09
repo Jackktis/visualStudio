@@ -1,28 +1,5 @@
 /* Example program for the imperative language impl */
 
-/*
-n=5;
-result=1;
-while(n!=0){
-  result=result*n;
-  n=n+(-1);
-}
-output result;
-*/
-
-
-/*
-b = true
-a = 1
-if( a > 0 ){
-
-output b;
-
-}
-
-output a;
-*/
-
 /* plus/minus, parentes og gange test */
 /*
 a = (4 - 2)*2;
@@ -44,11 +21,8 @@ else {
 output a; 
 */
 
-output a; */
-
 
 /*
-
 // While loop test
 a = 0;
 while (a < 10) {
@@ -57,19 +31,15 @@ while (a < 10) {
 }
 */
 
-/* 
-// for i test
+/*
+// For loop test
 n = 10;
 for(i=0..n){
 a = i;
 output a;
 i = i++;
-*/
 }
-
-
 */
-
 
 /*
 // Array test
@@ -77,5 +47,9 @@ i = i++;
 a[1] = 5;
 
 output a[1];
+
+a[5] = 5;
+b = 2;
+output a[b+3];
 
 */
