@@ -167,7 +167,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 		if(ctx.op.getText().equals("&&")){
 			if (c1 == 1.0 && c2 == 1.0){
 				return 1.0;
-			}else{
+			} else {
 				return 0.0;
 			}
 		}
