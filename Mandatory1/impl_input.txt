@@ -1,13 +1,13 @@
 /* Example program for the imperative language impl */
 
-/* plus/minus, parentes og gange test */
+            // plus/minus, parentes og gange test
 /*
 a = (4 - 2)*2;
 output a;
 */
 
 
-// if, else, elseif test
+            // if, else, elseif test
 /*
 if (1 == 2) { 
   a = 0; 
@@ -21,9 +21,8 @@ else {
 output a; 
 */
 
-
+            // While loop test
 /*
-// While loop test
 a = 0;
 while (a < 10) {
   a = a + 1;
@@ -31,8 +30,8 @@ while (a < 10) {
 }
 */
 
+            // For loop test
 /*
-// For loop test
 n = 10;
 for(i=0..n){
 a = i;
@@ -41,15 +40,58 @@ i = i++;
 }
 */
 
+            // Array test
 /*
-// Array test
-
 a[1] = 5;
-
 output a[1];
-
 a[5] = 5;
 b = 2;
 output a[b+3];
-
 */
+
+
+            // if, else, elseif, with array test
+/*
+i = 5;
+a[i] = 5;
+b = 1;
+
+if (i == 5) 
+  while (b < 10) {
+    b++;
+    output b;
+  }
+
+elseif (1 < 0) {
+  a = 4; 
+}
+
+else {
+  a = 2;
+}
+
+output a; 
+*/
+
+
+            // While loop test
+/*
+a = 0;
+if (a == 0)
+  while (a < 10) {
+    a = a++;
+    output a;
+  }
+  */
+
+
+// test
+
+a[1] = 10;
+b = 1;
+if (b < a[1]) {
+  while (b < a[1]) {
+    b = b++;
+    output b;
+  }
+}

@@ -51,6 +51,13 @@ public interface implVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitOutput(implParser.OutputContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code IfStmt}
+	 * labeled alternative in {@link implParser#command}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIfStmt(implParser.IfStmtContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code IfElseStmt}
 	 * labeled alternative in {@link implParser#command}.
 	 * @param ctx the parse tree

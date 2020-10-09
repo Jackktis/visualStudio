@@ -187,6 +187,13 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 		return 0.0;
 	};
 
+	public Double visitIfStmt(implParser.IfStmtContext ctx) {
+		if (visit(ctx.con1).equals(1.0)) {
+			visit(ctx.p);
+		}
+		return 0.0;
+	};
+
 	public Double visitIfElseStmt(implParser.IfElseStmtContext ctx) {
 		if (visit(ctx.con1).equals(1.0)) {
 			visit(ctx.p);
@@ -223,7 +230,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements implVisito
 	public Double visitArray(implParser.ArrayContext ctx) {
 		double v1 = visit(ctx.e1);
 		double v2 = visit(ctx.e2);
-
+		
 		//Index = int, cannot be a double arr[1.2] doesnt work
 		int index = visit(ctx.e1).intValue();
 		String indexStr = "[" + index + "]";

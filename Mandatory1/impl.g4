@@ -3,18 +3,19 @@ grammar impl;
 /* A small imperative language */
 /* Gruppe 20 */
 
-start   :  cs+=command* EOF ;
+start   :  cs+=command* EOF;
 
 program : c=command                                                 # SingleCommand
 	| '{' cs+=command* '}'                                          # MultipleCommands
 	;
 	
 command : x=ID '=' e=expr ';'	                             													 # Assignment
-	| x=ID '[' e1=expr ']' '=' e2=expr ';'					 													 # Array
+	| x=ID '[' e1=expr ']' '=' e2=expr ';'+					 													 # Array
 	| 'output' e=expr ';'                                    													 # Output
+	| 'if' '(' con1=condition ')' p=program												 						 # IfStmt
 	| 'if' '(' con1=condition ')' p=program ('else' p2=program)+												 # IfElseStmt
 	| 'if' '(' con1=condition ')' p=program ('elseif' '(' con2=condition ')' p2=program ) ( 'else' p3=program )+ # ElseIfStmt
-    | 'while' '('con1=condition')' p=program                        											 # WhileLoop
+    | 'while' '(' con1=condition ')' p=program                        											 # WhileLoop
 	| 'for' '(' x=ID '=' e1=expr '..' e2=expr')' p=program          											 # ForI
 	;
 	
@@ -49,6 +50,6 @@ FLOAT : '-'? NUM+ ('.' NUM+)? ;
 ALPHA : [a-zA-Z_ÆØÅæøå] ;
 NUM   : [0-9] ;
 
-WHITESPACE : [ \n\t\r]+ -> skip;
+WHITESPACE : [ \t\r\n]+ -> skip;
 COMMENT    : '//'~[\n]*  -> skip;
 COMMENT2   : '/*' (~[*] | '*'~[/]  )*   '*/'  -> skip;
