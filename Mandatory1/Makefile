@@ -21,12 +21,6 @@ test:	main.class
 test2:	main.class
 	java main impl_additional.txt
 
-test3:	main.class
-	java main impl_test_conditionals.txt
-
-test4:	main.class
-	java main impl_test_math.txt
-
 tree:	$(GENERATED) impl.g4
 	javac $(GENERATED)
 	$(grun) impl start -tree -gui < impl_input.txt
@@ -34,14 +28,6 @@ tree:	$(GENERATED) impl.g4
 tree2:	$(GENERATED) impl.g4
 	javac $(GENERATED)
 	$(grun) impl start -tree -gui < impl_additional.txt
-
-tree3:	$(GENERATED) impl.g4
-	javac $(GENERATED)
-	$(grun) impl start -tree -gui < impl_test_conditionals.txt
-
-tree4:	$(GENERATED) impl.g4
-	javac $(GENERATED)
-	$(grun) impl start -tree -gui < impl_test_math.txt
 
 clean: 
 	rm $(GENERATED) *.class *.interp *.tokens implBaseListener.java implListener.java 

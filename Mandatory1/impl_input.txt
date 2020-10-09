@@ -85,8 +85,8 @@ if (a == 0)
   */
 
 
-// test
-
+            // multiple test
+/*
 a[1] = 10;
 b = 1;
 if (b < a[1]) {
@@ -95,3 +95,15 @@ if (b < a[1]) {
     output b;
   }
 }
+*/ 
+
+           // Example program for the imperative language impl
+/*
+n=5;
+result=1;
+while(n != 0){
+  result=result;
+  n=n-(1);
+}
+output result; 
+*/      
